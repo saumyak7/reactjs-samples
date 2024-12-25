@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simple Div Example</title>
+    <script>
+      function displaySelectedFruit(event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Get the selected fruit value
+        var selectedFruit = document.getElementById("fruits").value;
+
+        // Display the selected fruit on the page
+        document.getElementById("result").innerHTML =
+          "You selected: " + selectedFruit;
+      }
+    </script>
   </head>
   <body>
     <!-- Header Section -->
@@ -61,6 +73,72 @@
           </ul>
         </li>
       </ul>
+    </div>
+
+    <div>
+      <!-- The <form> tag in HTML is used to create a form for collecting user input. 
+            It serves as a container for various input elements like text fields, checkboxes, radio buttons,
+             and buttons, allowing users to interact with the webpage and submit data to a server. -->
+      <h3>Example of dropdown and form</h3>
+      <h4>Choose Your Favorite Fruit:</h4>
+      <form onsubmit="displaySelectedFruit(event)">
+        <label for="fruits">Select a fruit:</label>
+        <select id="fruits" name="fruits">
+          <option value="apple">Apple</option>
+          <option value="banana">Banana</option>
+          <option value="cherry">Cherry</option>
+          <option value="orange">Orange</option>
+        </select>
+        <br /><br />
+        <button type="submit">Submit</button>
+      </form>
+
+      <p id="result"></p>
+    </div>
+
+    <div>
+            <!-- <table>: Defines the table.
+    <tr>: Defines a table row.
+    <th>: Defines a table header cell. Text inside <th> is typically bold and centered by default.
+    <td>: Defines a table data cell -->
+      <h3>Example of table</h3>
+      <h4>Department Details</h4>
+      <table border="1">
+        <tr>
+          <th>Department</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td>Sales</td>
+          <td>
+            <table border="1">
+              <tr>
+                <td>Manager</td>
+                <td>John Doe</td>
+              </tr>
+              <tr>
+                <td>Employees</td>
+                <td>5</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>Marketing</td>
+          <td>
+            <table border="1">
+              <tr>
+                <td>Manager</td>
+                <td>Jane Smith</td>
+              </tr>
+              <tr>
+                <td>Employees</td>
+                <td>4</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
     </div>
   </body>
   <!-- Footer Section -->
